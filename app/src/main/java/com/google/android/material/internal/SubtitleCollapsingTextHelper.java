@@ -1,6 +1,7 @@
 package com.google.android.material.internal;
 
 import android.animation.TimeInterpolator;
+import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -77,7 +78,9 @@ public final class SubtitleCollapsingTextHelper {
     private Typeface collapsedTitleTypeface, collapsedSubtitleTypeface;
     private Typeface expandedTitleTypeface, expandedSubtitleTypeface;
     private Typeface currentTitleTypeface, currentSubtitleTypeface;
+    @SuppressLint("RestrictedApi")
     private CancelableFontCallback expandedTitleFontCallback, expandedSubtitleFontCallback;
+    @SuppressLint("RestrictedApi")
     private CancelableFontCallback collapsedTitleFontCallback, collapsedSubtitleFontCallback;
 
     @Nullable
@@ -330,8 +333,9 @@ public final class SubtitleCollapsingTextHelper {
         return collapsedTextGravity;
     }
 
+    @SuppressLint("RestrictedApi")
     public void setCollapsedTitleTextAppearance(int resId) {
-        TextAppearance textAppearance = new TextAppearance(view.getContext(), resId);
+         TextAppearance textAppearance = new TextAppearance(view.getContext(), resId);
 
         if (textAppearance.getTextColor() != null) {
             collapsedTitleTextColor = textAppearance.getTextColor();
@@ -361,6 +365,7 @@ public final class SubtitleCollapsingTextHelper {
         recalculate();
     }
 
+    @SuppressLint("RestrictedApi")
     public void setExpandedTitleTextAppearance(int resId) {
         TextAppearance textAppearance = new TextAppearance(view.getContext(), resId);
         if (textAppearance.getTextColor() != null) {
@@ -391,6 +396,7 @@ public final class SubtitleCollapsingTextHelper {
         recalculate();
     }
 
+    @SuppressLint("RestrictedApi")
     public void setCollapsedSubtitleTextAppearance(int resId) {
         TextAppearance textAppearance = new TextAppearance(view.getContext(), resId);
 
@@ -422,6 +428,7 @@ public final class SubtitleCollapsingTextHelper {
         recalculate();
     }
 
+    @SuppressLint("RestrictedApi")
     public void setExpandedSubtitleTextAppearance(int resId) {
         TextAppearance textAppearance = new TextAppearance(view.getContext(), resId);
         if (textAppearance.getTextColor() != null) {
@@ -492,6 +499,7 @@ public final class SubtitleCollapsingTextHelper {
         }
     }
 
+    @SuppressLint("RestrictedApi")
     @SuppressWarnings("ReferenceEquality") // Matches the Typeface comparison in TextView
     private boolean setCollapsedTitleTypefaceInternal(Typeface typeface) {
         // Explicit Typeface setting cancels pending async fetch, if any, to avoid old font overriding
@@ -506,6 +514,7 @@ public final class SubtitleCollapsingTextHelper {
         return false;
     }
 
+    @SuppressLint("RestrictedApi")
     @SuppressWarnings("ReferenceEquality") // Matches the Typeface comparison in TextView
     private boolean setExpandedTitleTypefaceInternal(Typeface typeface) {
         // Explicit Typeface setting cancels pending async fetch, if any, to avoid old font overriding
@@ -520,6 +529,7 @@ public final class SubtitleCollapsingTextHelper {
         return false;
     }
 
+    @SuppressLint("RestrictedApi")
     @SuppressWarnings("ReferenceEquality") // Matches the Typeface comparison in TextView
     private boolean setCollapsedSubtitleTypefaceInternal(Typeface typeface) {
         // Explicit Typeface setting cancels pending async fetch, if any, to avoid old font overriding
@@ -534,6 +544,7 @@ public final class SubtitleCollapsingTextHelper {
         return false;
     }
 
+    @SuppressLint("RestrictedApi")
     @SuppressWarnings("ReferenceEquality") // Matches the Typeface comparison in TextView
     private boolean setExpandedSubtitleTypefaceInternal(Typeface typeface) {
         // Explicit Typeface setting cancels pending async fetch, if any, to avoid old font overriding
@@ -1241,6 +1252,7 @@ public final class SubtitleCollapsingTextHelper {
         return Color.argb((int) a, (int) r, (int) g, (int) b);
     }
 
+    @SuppressLint("RestrictedApi")
     private static float lerp(
             float startValue, float endValue, float fraction, @Nullable TimeInterpolator interpolator) {
         if (interpolator != null) {

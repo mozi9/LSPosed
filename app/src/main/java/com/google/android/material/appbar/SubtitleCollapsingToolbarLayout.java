@@ -1,6 +1,7 @@
 package com.google.android.material.appbar;
 
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -90,6 +91,7 @@ public class SubtitleCollapsingToolbarLayout extends FrameLayout {
         this(context, attrs, 0);
     }
 
+    @SuppressLint("RestrictedApi")
     public SubtitleCollapsingToolbarLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
@@ -358,6 +360,7 @@ public class SubtitleCollapsingToolbarLayout extends FrameLayout {
         }
     }
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
@@ -387,7 +390,6 @@ public class SubtitleCollapsingToolbarLayout extends FrameLayout {
             // We only draw the title if the dummy view is being displayed (Toolbar removes
             // views if there is no space)
             drawCollapsingTitle = ViewCompat.isAttachedToWindow(dummyView) && dummyView.getVisibility() == VISIBLE;
-
             if (drawCollapsingTitle) {
                 final boolean isRtl = ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL;
 
@@ -554,6 +556,7 @@ public class SubtitleCollapsingToolbarLayout extends FrameLayout {
         }
     }
 
+    @SuppressLint("RestrictedApi")
     private void animateScrim(int targetAlpha) {
         ensureToolbar();
         if (scrimAnimator == null) {

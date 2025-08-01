@@ -28,7 +28,7 @@ android {
     namespace = "org.lsposed.lspd.core"
 
     buildFeatures {
-        androidResources = false
+        android.androidResources.enable = false
         buildConfig = true
     }
 
@@ -61,6 +61,7 @@ dependencies {
     implementation(projects.axml)
     implementation(projects.hiddenapi.bridge)
     implementation(projects.services.daemonService)
+    implementation(projects.services.managerService)
     implementation(projects.services.managerService)
     compileOnly(libs.androidx.annotation)
     compileOnly(projects.hiddenapi.stubs)
